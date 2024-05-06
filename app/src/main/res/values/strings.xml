@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Parcial-am-acn4b-catero-moris</string>
+    <string name="nombre_app">ValorantConecta</string>
+    <string name="inicio_app">INICIO</string>
+    <string name="modificar">Modificar</string>
+    <string name="match">MATCH</string>
+    <string name="formar_equipo">FORMAR EQUIPO</string>
+    <string name="amigos">AMIGOS</string>
+    <string name="historial">HISTORIAL</string>
 </resources>
