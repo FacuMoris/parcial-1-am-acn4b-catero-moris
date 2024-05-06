@@ -21,7 +21,7 @@
             android:id="@+id/top-lay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#000000"
+            android:background="@color/valorantsecundario"
             android:orientation="horizontal"
             android:textAlignment="center">
 
@@ -40,7 +40,7 @@
                 android:id="@+id/menubtn"
                 android:layout_width="71dp"
                 android:layout_height="wrap_content"
-                android:background="#000000"
+                android:backgroundTint="@color/valorantsecundario"
                 android:hapticFeedbackEnabled="false"
                 android:text="..." />
         </LinearLayout>
@@ -133,6 +133,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
+                    android:backgroundTint="@color/valorantprimario"
                     android:text="Modificar" />
             </LinearLayout>
 
@@ -154,6 +155,7 @@
                 android:layout_marginEnd="10dp"
                 android:paddingTop="20dp"
                 android:paddingBottom="20dp"
+                android:backgroundTint="@color/valorantprimario"
                 android:text="MATCH" />
 
             <Button
@@ -165,6 +167,7 @@
                 android:layout_marginEnd="10dp"
                 android:paddingTop="20dp"
                 android:paddingBottom="20dp"
+                android:backgroundTint="@color/valorantprimario"
                 android:text="FORMAR EQUIPO" />
 
             <Button
@@ -176,6 +179,7 @@
                 android:layout_marginEnd="10dp"
                 android:paddingTop="20dp"
                 android:paddingBottom="20dp"
+                android:backgroundTint="@color/valorantprimario"
                 android:text="AMIGOS" />
 
             <Button
@@ -187,6 +191,7 @@
                 android:layout_marginEnd="10dp"
                 android:paddingTop="20dp"
                 android:paddingBottom="20dp"
+                android:backgroundTint="@color/valorantprimario"
                 android:text="HISTORIAL" />
         </LinearLayout>
 
