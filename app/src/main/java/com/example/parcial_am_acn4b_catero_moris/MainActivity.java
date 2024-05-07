@@ -1,15 +1,22 @@
 package com.example.parcial_am_acn4b_catero_moris;
 
 import android.os.Bundle;
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import android.widget.Button;
+import android.widget.TextView;
+import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
+    private TextView textViewUsuario;
+    private TextView textViewRango;
+    private TextView textViewRol;
+    private TextView textViewAgente;
+    private Button buttonModificar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,5 +27,25 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        textViewUsuario = findViewById(R.id.username);
+        textViewRango = findViewById(R.id.rangoact);
+        textViewRol = findViewById(R.id.rolmain);
+        textViewAgente = findViewById(R.id.agentmain);
+        buttonModificar = findViewById(R.id.modifuser);
+
+        buttonModificar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cambiarTextos();
+            }
+        });
+    }
+
+    private void cambiarTextos() {
+        textViewUsuario.setText("GhostWarrior");
+        textViewRango.setText("Diamante III");
+        textViewRol.setText("Centinela");
+        textViewAgente.setText("Killjoy");
     }
 }
