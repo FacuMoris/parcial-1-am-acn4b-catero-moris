@@ -7,4 +7,10 @@
     <string name="formar_equipo">FORMAR EQUIPO</string>
     <string name="amigos">AMIGOS</string>
     <string name="historial">HISTORIAL</string>
+    <string name="contentImg">Imágen de perfil</string>
+    <string name="burguermenu">...</string>
+    <string name="username">Username # TAG</string>
+    <string name="rangoact">Rango Actual</string>
+    <string name="rolmain">Main rol</string>
+    <string name="agentmain">Agente main</string>
 </resources>
