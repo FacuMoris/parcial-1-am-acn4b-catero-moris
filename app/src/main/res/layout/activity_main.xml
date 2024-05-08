@@ -80,10 +80,11 @@
 
                 <ImageView
                     android:id="@+id/profilepic"
+                    android:visibility="visible"
                     android:layout_width="110dp"
                     android:layout_height="110dp"
                     android:layout_marginStart="10dp"
-                    tools:srcCompat="@tools:sample/avatars"
+                    android:src="@drawable/profile"
                     android:contentDescription="@string/contentImg" />
             </LinearLayout>
 
