@@ -13,4 +13,5 @@
     <string name="rangoact">Rango Actual</string>
     <string name="rolmain">Main rol</string>
     <string name="agentmain">Agente main</string>
+    <string name="historial_app">HISTORIAL DE PARTIDAS</string>
 </resources>
