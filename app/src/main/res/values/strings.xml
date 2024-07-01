@@ -14,4 +14,5 @@
     <string name="rolmain">Main rol</string>
     <string name="agentmain">Agente main</string>
     <string name="historial_app">HISTORIAL DE PARTIDAS</string>
+    <string name="verhistorial">VER HISTORIAL</string>
 </resources>
