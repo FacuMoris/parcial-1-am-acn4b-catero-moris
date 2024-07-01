@@ -16,5 +16,37 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <LinearLayout
+            android:id="@+id/toplay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/valorant_secundario"
+            android:orientation="horizontal"
+            android:textAlignment="center">
+
+            <TextView
+                android:id="@+id/titulo"
+                android:layout_width="338dp"
+                android:layout_height="match_parent"
+                android:paddingStart="65dp"
+                android:paddingEnd="0dp"
+                android:paddingTop="13dp"
+                android:text="@string/nombre_app"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/menubtn"
+                android:layout_width="71dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/valorant_secundario"
+                android:hapticFeedbackEnabled="false"
+                android:text="@string/burguermenu" />
+        </LinearLayout>
+
+        
+
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
