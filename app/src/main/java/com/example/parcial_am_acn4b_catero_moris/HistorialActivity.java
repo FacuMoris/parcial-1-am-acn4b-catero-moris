@@ -16,6 +16,7 @@ public class HistorialActivity extends AppCompatActivity {
     private Button btnHistorial;
     private LinearLayout container;
 
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
