@@ -81,8 +81,9 @@
 
         <ScrollView
             android:id="@+id/historialscrollview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_width="360dp"
+            android:layout_height="match_parent"
+            android:translationX="23dp">
 
             <LinearLayout
                 android:id="@+id/linearlayoutscroll"
