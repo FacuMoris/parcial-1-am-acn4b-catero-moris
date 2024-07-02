@@ -13,7 +13,6 @@ import android.view.View;
 
 public class HistorialActivity extends AppCompatActivity {
 
-    private Button btnHistorial;
     private LinearLayout container;
 
     @Override
@@ -27,7 +26,8 @@ public class HistorialActivity extends AppCompatActivity {
             return insets;
         });
 
-        btnHistorial = findViewById(R.id.btnhistorial);
+
+        Button btnHistorial = findViewById(R.id.btnhistorial);
         container = findViewById(R.id.linearlayoutscroll);
 
         btnHistorial.setOnClickListener(new View.OnClickListener() {
