@@ -1,5 +1,6 @@
 package com.example.parcial_am_acn4b_catero_moris;
 
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView textViewRol;
     private TextView textViewAgente;
     private Button buttonModificar;
+    private Button buttonHistorial;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +40,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 cambiarTextos();
+            }
+        });
+
+        buttonHistorial = findViewById(R.id.button8);
+        buttonHistorial.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, HistorialActivity.class);
+                startActivity(intent);
             }
         });
     }
