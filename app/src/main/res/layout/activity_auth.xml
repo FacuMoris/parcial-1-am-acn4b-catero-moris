@@ -51,26 +51,13 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/singUpButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:backgroundTint="@color/valorant_primario"
-                android:text="@string/registrarse" />
-
-            <Space
-                android:id="@+id/espacioBotones"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
-
-            <Button
                 android:id="@+id/logInButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:backgroundTint="@color/valorant_primario"
-                android:text="@string/iniciarSesion"/>
+                android:text="@string/iniciarSesion"
+                android:onClick="loginUser"/>
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
