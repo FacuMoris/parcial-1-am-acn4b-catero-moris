@@ -16,4 +16,7 @@
     <string name="agentmain">Agente main</string>
     <string name="historial_app">HISTORIAL DE PARTIDAS</string>
     <string name="verhistorial">VER HISTORIAL</string>
+    <string name="cerrarSesion">CERRAR SESIÓN</string>
+    <string name="registrarse">Registrarse</string>
+    <string name="iniciarSesion">Iniciar Sesión</string>
 </resources>

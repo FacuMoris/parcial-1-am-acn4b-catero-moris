@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "257835584487",
+    "project_id": "final-aplicaciones-movil-b41fa",
+    "storage_bucket": "final-aplicaciones-movil-b41fa.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:257835584487:android:180f7f90c47c0874068b42",
+        "android_client_info": {
+          "package_name": "com.example.parcial_am_acn4b_catero_moris"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIRAzSG3WrlnBDpSQRMx0StDiHkAC5bEc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
