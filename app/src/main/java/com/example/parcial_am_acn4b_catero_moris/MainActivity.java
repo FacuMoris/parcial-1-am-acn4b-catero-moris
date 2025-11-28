@@ -10,6 +10,7 @@ import androidx.core.view.WindowInsetsCompat;
 import android.widget.Button;
 import android.widget.TextView;
 import android.view.View;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView textViewAgente;
     private Button buttonModificar;
     private Button buttonHistorial;
+    private Button buttonCerrarSesion;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +52,20 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, HistorialActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        buttonCerrarSesion = findViewById(R.id.button9);
+        buttonCerrarSesion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                FirebaseAuth.getInstance().signOut();
+                
+                Intent intent = new Intent(MainActivity.this, AuthActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+                finish();
             }
         });
     }
