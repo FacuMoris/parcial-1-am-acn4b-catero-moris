@@ -1,5 +1,6 @@
 package com.example.parcial_am_acn4b_catero_moris;
 
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +15,7 @@ import android.view.View;
 public class HistorialActivity extends AppCompatActivity {
 
     private LinearLayout container;
+    private Button buttonVolver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +28,6 @@ public class HistorialActivity extends AppCompatActivity {
             return insets;
         });
 
-
         Button btnHistorial = findViewById(R.id.btnhistorial);
         container = findViewById(R.id.linearlayoutscroll);
 
@@ -34,6 +35,16 @@ public class HistorialActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 cargarHistorial();
+            }
+        });
+
+        buttonVolver = findViewById(R.id.button10);
+        buttonVolver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HistorialActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
     }
@@ -52,7 +63,6 @@ public class HistorialActivity extends AppCompatActivity {
                 "Partida 10: Mapa {Heaven} Personaje {Breach} Resultado: Victoria",
                 "Partida 11: Mapa {Icebox} Personaje {Killjoy} Resultado: Victoria",
                 "Partida 12: Mapa {Split} Personaje {Reyna} Resultado: Derrota"
-
         };
 
         container.removeAllViews();

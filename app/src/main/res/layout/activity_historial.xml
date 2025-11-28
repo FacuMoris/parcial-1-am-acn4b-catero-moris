@@ -82,7 +82,7 @@
         <ScrollView
             android:id="@+id/historialscrollview"
             android:layout_width="360dp"
-            android:layout_height="match_parent"
+            android:layout_height="464dp"
             android:translationX="23dp">
 
             <LinearLayout
@@ -92,6 +92,17 @@
                 android:orientation="vertical" />
         </ScrollView>
 
-
+        <Button
+            android:id="@+id/button10"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="120dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="120dp"
+            android:layout_weight="0"
+            android:backgroundTint="@color/valorant_primario"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="@string/volver"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
