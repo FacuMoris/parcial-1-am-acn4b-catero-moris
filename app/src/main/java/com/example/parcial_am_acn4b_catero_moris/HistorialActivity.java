@@ -12,10 +12,17 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.view.View;
 
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.QuerySnapshot;
+
 public class HistorialActivity extends AppCompatActivity {
 
     private LinearLayout container;
     private Button buttonVolver;
+    private FirebaseFirestore db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +37,8 @@ public class HistorialActivity extends AppCompatActivity {
 
         Button btnHistorial = findViewById(R.id.btnhistorial);
         container = findViewById(R.id.linearlayoutscroll);
+
+        db = FirebaseFirestore.getInstance();
 
         btnHistorial.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,38 +59,45 @@ public class HistorialActivity extends AppCompatActivity {
     }
 
     private void cargarHistorial() {
-        String[] historial = {
-                "Partida 1: Mapa {Bind} Personaje {Viper} Resultado: Victoria",
-                "Partida 2: Mapa {Bind} Personaje {Raze} Resultado: Derrota",
-                "Partida 3: Mapa {Heaven} Personaje {Fade} Resultado: Victoria",
-                "Partida 4: Mapa {Split} Personaje {Astra} Resultado: Victoria",
-                "Partida 5: Mapa {Icebox} Personaje {Brimstone} Resultado: Derrota",
-                "Partida 6: Mapa {Heaven} Personaje {Cypher} Resultado: Victoria",
-                "Partida 7: Mapa {Lotus} Personaje {KAY/O} Resultado: Victoria",
-                "Partida 8: Mapa {Fracture} Personaje {Omen} Resultado: Victoria",
-                "Partida 9: Mapa {Ascent} Personaje {Skye} Resultado: Derrota",
-                "Partida 10: Mapa {Heaven} Personaje {Breach} Resultado: Victoria",
-                "Partida 11: Mapa {Icebox} Personaje {Killjoy} Resultado: Victoria",
-                "Partida 12: Mapa {Split} Personaje {Reyna} Resultado: Derrota"
-        };
-
         container.removeAllViews();
 
-        for (String partida : historial) {
-            TextView textView = new TextView(this);
-            textView.setLayoutParams(new LinearLayout.LayoutParams(
-                    LinearLayout.LayoutParams.MATCH_PARENT,
-                    LinearLayout.LayoutParams.WRAP_CONTENT));
-            textView.setText(partida);
-            container.addView(textView);
+        db.collection("Partidas")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            int count = 1;
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                String mapa = document.getString("Mapa");
+                                String personaje = document.getString("Personaje");
+                                String resultado = document.getString("Resultado");
 
-            View divider = new View(this);
-            divider.setLayoutParams(new LinearLayout.LayoutParams(
-                    LinearLayout.LayoutParams.MATCH_PARENT,
-                    1));
-            divider.setBackgroundColor(getResources().getColor(android.R.color.darker_gray));
-            container.addView(divider);
-        }
+                                String partida = "Partida " + count + ": Mapa {" + mapa + "} Personaje {" + personaje + "} Resultado: " + resultado;
+
+                                TextView textView = new TextView(HistorialActivity.this);
+                                textView.setLayoutParams(new LinearLayout.LayoutParams(
+                                        LinearLayout.LayoutParams.MATCH_PARENT,
+                                        LinearLayout.LayoutParams.WRAP_CONTENT));
+                                textView.setText(partida);
+                                container.addView(textView);
+
+                                View divider = new View(HistorialActivity.this);
+                                divider.setLayoutParams(new LinearLayout.LayoutParams(
+                                        LinearLayout.LayoutParams.MATCH_PARENT,
+                                        1));
+                                divider.setBackgroundColor(getResources().getColor(android.R.color.darker_gray));
+                                container.addView(divider);
+
+                                count++;
+                            }
+                        } else {
+                            TextView errorView = new TextView(HistorialActivity.this);
+                            errorView.setText("Error al cargar el historial: " + task.getException().getMessage());
+                            container.addView(errorView);
+                        }
+                    }
+                });
     }
 }
 
